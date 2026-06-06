@@ -14,7 +14,22 @@ function App() {
           setCount(count + 1);
         }}
       >
-        Increment
+        KOOTTAN ULLATH
+      </button>
+
+      <button
+        onClick={() => {
+          setCount(count - 1);
+        }}
+      >
+        KURAKKAN ULLATH !
+      </button>
+      <button
+        onClick={() => {
+          setCount(0);
+        }}
+      >
+        VEEENDUM ZERO AAKKAN 
       </button>
     </div>
   );
