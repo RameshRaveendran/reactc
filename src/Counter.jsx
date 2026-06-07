@@ -12,23 +12,22 @@ function Counter() {
           setCount(count + 1);
         }}
       >
-        Increment
+        KOOTTAN
       </button>
       <button
         onClick={() => {
-          setCount(count + 1);
+          setCount(count - 1);
         }}
       >
-        Increment
+        KURAKKAN
       </button>
       <button
         onClick={() => {
-          setCount(count + 1);
+          setCount(0);
         }}
       >
-        Increment
+        MUZHUVAN MAYKKAN
       </button>
-      
     </>
   );
 }
