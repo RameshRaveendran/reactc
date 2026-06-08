@@ -5,7 +5,7 @@ function App() {
     <>
       <Counter
         title="Likes"
-        startValue={0}
+        startValue={1000000}
       />
 
       <Counter
