@@ -3,7 +3,7 @@ import Counter from "./Counter";
 function App() {
   return (
     <>
-      <Counter title="Likes" />
+      <Counter title="Likes" startValue={100} />
     </>
   );
 }
