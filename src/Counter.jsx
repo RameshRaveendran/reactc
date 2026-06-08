@@ -1,8 +1,22 @@
-function Counter(props) {
+import { useState } from "react";
+
+function Counter({ title, startValue }) {
+  const [count, setCount] =
+    useState(startValue);
+
   return (
     <>
-      <h1>{props.title}</h1>
-      <h2>{props.startValue}</h2>
+      <h2>{title}</h2>
+
+      <h3>{count}</h3>
+
+      <button
+        onClick={() =>
+          setCount(count + 1)
+        }
+      >
+        Increment
+      </button>
     </>
   );
 }
