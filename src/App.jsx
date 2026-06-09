@@ -8,14 +8,15 @@ function App() {
   function increaseCount() {
     setCount(count + 1);
   }
+  function decrementCount() {
+    setCount(count - 1);
+  }
 
   return (
-    <Counter
-      count={count}
-      onIncrement={
-        increaseCount
-      }
-    />
+    <>
+      <Counter count={count} onIncrement={increaseCount} />
+      <Counter count={count} onDecrement={decrementCount} />
+    </>
   );
 }
 

@@ -3,6 +3,7 @@
 function Counter({
   count,
   onIncrement,
+  onDecrement,
 }) {
   return (
     <>
@@ -11,7 +12,12 @@ function Counter({
       <button
         onClick={onIncrement}
       >
-        Increment
+        KOOTT PUNDAKALE
+      </button>
+      <button
+        onClick={onDecrement}
+      >
+        KURAKK MYROLE
       </button>
     </>
   );
