@@ -1,18 +1,11 @@
 import Counter from "./Counter";
 
 function App() {
-  return (
-    <>
-      <Counter
-        title="Likes"
-        startValue={1000000}
-      />
+  const [count, setCount] =
+    useState(0);
 
-      <Counter
-        title="Followers"
-        startValue={100}
-      />
-    </>
+  return (
+    <Counter />
   );
 }
 
