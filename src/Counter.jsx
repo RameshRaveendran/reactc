@@ -6,6 +6,7 @@ function Counter({
 }) {
   return (
     <>
+      <h1>ivide nokk myrole</h1>
       <h2>{count}</h2>
 
       <button
@@ -13,7 +14,21 @@ function Counter({
           setCount(count + 1)
         }
       >
-        Increment
+        koottan
+      </button>
+      <button
+        onClick={() =>
+          setCount(count - 1)
+        }
+      >
+        kurakkan
+      </button>
+      <button
+        onClick={() =>
+          setCount(count - count)
+        }
+      >
+        0 aakkan 
       </button>
     </>
   );
