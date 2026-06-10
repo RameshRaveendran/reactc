@@ -6,7 +6,9 @@ function App() {
     useState(0);
 
   function increaseCount() {
-    setCount(count + 1);
+    if(count > 0){
+      setCount(count - 1);
+    }
   }
   function decrementCount() {
     setCount(count - 1);
