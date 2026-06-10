@@ -15,7 +15,6 @@ function App() {
   return (
     <>
       <Counter count={count} onIncrement={increaseCount} onDecrement={decrementCount} />
-      <Counter count={count} onIncrement={increaseCount} onDecrement={decrementCount} />
     </>
   );
 }
