@@ -15,6 +15,10 @@ function Counter({
     color = "blue";
   }
 
+  if(count >= 30){
+    color = "red"
+  }
+
   return (
     <div>
       <h2 style={{ color }}>
