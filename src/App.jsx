@@ -1,35 +1,56 @@
-import Counter from "./Counter";
 import { useState } from "react";
+import Counter from "./Counter";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [step, setStep] = useState(1);
 
-  let color = "";
+  const MAX_LIMIT = 50;
 
-  if (count === 0) {
-  color = "gray";
-}
-else if (count < 10) {
-  color = "green";
-}
-  const [count, setCount] =
-    useState(0);
-
-    
-
-  function increaseCount() {
-    
-    setCount(count + 1);
-  }
-  function decrementCount() {
-    if(count > 0){
-      setCount(count - 1)
+  function increase() {
+    if (count + step <= MAX_LIMIT) {
+      setCount(count + step);
     }
   }
 
+  function decrease() {
+    if (count - step >= 0) {
+      setCount(count - step);
+    }
+  }
+
+  function reset() {
+    setCount(0);
+  }
+
   return (
-    <>
-      <Counter count={count} onIncrement={increaseCount} onDecrement={decrementCount} />
-    </>
+    <div>
+      <h1>Counter App V2</h1>
+
+      <h3>Current Step: {step}</h3>
+
+      <button onClick={() => setStep(1)}>
+        Step 1
+      </button>
+
+      <button onClick={() => setStep(5)}>
+        Step 5
+      </button>
+
+      <button onClick={() => setStep(10)}>
+        Step 10
+      </button>
+
+      <hr />
+
+      <Counter
+        count={count}
+        maxLimit={MAX_LIMIT}
+        onIncrement={increase}
+        onDecrement={decrease}
+        onReset={reset}
+      />
+    </div>
   );
 }
 
