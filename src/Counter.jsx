@@ -15,6 +15,7 @@ function Counter({
         KOOTT PUNDAKALE
       </button>
       <button
+        disabled={count === 0}
         onClick={onDecrement}
       >
         KURAKK MYROLE
