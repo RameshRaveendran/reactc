@@ -1,11 +1,22 @@
 import { useState, useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] =
+  useState(() => {
+    return Number(
+      localStorage.getItem("count")
+    ) || 0;
+  });
 
   useEffect(() => {
     document.title = `Count: ${count}`;
   });
+  useEffect(() => {
+  localStorage.setItem(
+    "count",
+    count
+  );
+}, [count]);
 
   return (
     <>
