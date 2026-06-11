@@ -5,7 +5,7 @@ function App() {
 
   useEffect(() => {
     document.title = `Count: ${count}`;
-  }, []);
+  });
 
   return (
     <>
