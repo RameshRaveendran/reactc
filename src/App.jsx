@@ -1,22 +1,23 @@
-import { useState  } from "react";
+import { useState } from "react";
+import Timer from "./Timer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  function startTimer() {
-    setInterval(() => {
-      setCount(prev => prev + 1);
-    }, 1000);
-  }
-  
+  const [showTimer, setShowTimer] =
+    useState(true);
 
   return (
     <>
-      <h1>{count}</h1>
-
-      <button onClick={startTimer}>
-        Start
+      <button
+        onClick={() =>
+          setShowTimer(
+            !showTimer
+          )
+        }
+      >
+        Toggle Timer
       </button>
+
+      {showTimer && <Timer />}
     </>
   );
 }
