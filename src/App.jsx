@@ -1,24 +1,24 @@
-import { useState } from "react";
-import Timer from "./Timer";
+import {
+  useRef,
+  useEffect
+} from "react";
 
 function App() {
-  const [showTimer, setShowTimer] =
-    useState(true);
+
+  const inputRef =
+    useRef(null);
+
+  useEffect(() => {
+
+    inputRef.current.focus();
+
+  }, []);
 
   return (
-    <>
-      <button
-        onClick={() =>
-          setShowTimer(
-            !showTimer
-          )
-        }
-      >
-        Toggle Timer
-      </button>
-
-      {showTimer && <Timer />}
-    </>
+    <input
+      ref={inputRef}
+      placeholder="Type..."
+    />
   );
 }
 
