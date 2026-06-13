@@ -1,20 +1,31 @@
-import {
-  useState,
-  useRef
-} from "react";
+
+
+import { useRef } from "react";
 
 function App() {
-  const countRef = useRef(0);
 
-  const handleClick = () => {
-    countRef.current++;
-    console.log(countRef.current);
+  const timerRef = useRef(null);
+
+  const start = () => {
+    timerRef.current = setInterval(() => {
+      console.log("Running");
+    },1000);
+  };
+
+  const stop = () => {
+    clearInterval(timerRef.current);
   };
 
   return (
-    <button onClick={handleClick}>
-      Click
-    </button>
+    <>
+      <button onClick={start}>
+        Start
+      </button>
+
+      <button onClick={stop}>
+        Stop
+      </button>
+    </>
   );
 }
 
