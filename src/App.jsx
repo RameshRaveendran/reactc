@@ -4,48 +4,17 @@ import {
 } from "react";
 
 function App() {
+  const countRef = useRef(0);
 
-  const [notes, setNotes] =
-    useState([]);
-
-  const inputRef =
-    useRef(null);
-
-  function addNote() {
-
-    const value =
-      inputRef.current.value;
-
-    if (!value) return;
-
-    setNotes([
-      ...notes,
-      value
-    ]);
-
-    inputRef.current.value = "";
-
-    inputRef.current.focus();
-  }
+  const handleClick = () => {
+    countRef.current++;
+    console.log(countRef.current);
+  };
 
   return (
-    <>
-      <input
-        ref={inputRef}
-      />
-
-      <button
-        onClick={addNote}
-      >
-        ivide add cheyyam thazhekk varum
-      </button>
-
-      <ul>
-        {notes.map(note => (
-          <li>{note}</li>
-        ))}
-      </ul>
-    </>
+    <button onClick={handleClick}>
+      Click
+    </button>
   );
 }
 
