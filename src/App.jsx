@@ -37,7 +37,7 @@ function App() {
       <button
         onClick={addNote}
       >
-        Add Note
+        ivide add cheyyam thazhekk varum
       </button>
 
       <ul>
