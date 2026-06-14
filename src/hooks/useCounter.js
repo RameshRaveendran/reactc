@@ -1,16 +1,25 @@
+
+
 import { useState } from "react";
 
-function useCounter(initialValue = 0) {
+function useCounter(
+  initialValue = 0,
+  step = 1
+) {
 
   const [count, setCount] =
     useState(initialValue);
 
   function increment() {
-    setCount(prev => prev + 1);
+    setCount(prev =>
+      prev + step
+    );
   }
 
   function decrement() {
-    setCount(prev => prev - 1);
+    setCount(prev =>
+      prev - step
+    );
   }
 
   function reset() {
@@ -26,3 +35,4 @@ function useCounter(initialValue = 0) {
 }
 
 export default useCounter;
+
