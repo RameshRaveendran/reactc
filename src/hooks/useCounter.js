@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function useCounter(initialValue = 0, step = 1) {
-//   const [count, setCount] = useState(initialValue);
-  const { count, increment } = useCounter(100, 5);
+  const [count, setCount] = useState(initialValue);
+  
 
   function increment() {
     setCount((prev) => prev + step);
