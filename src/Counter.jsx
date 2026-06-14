@@ -1,60 +1,31 @@
-function Counter({
-  count,
-  maxLimit,
-  onIncrement,
-  onDecrement,
-  onReset,
-}) {
-  let color = "gray";
+import useCounter
+from "./hooks/useCounter";
 
-  if (count > 0) {
-    color = "green";
-  }
+function Counter() {
 
-  if (count >= 25) {
-    color = "blue";
-  }
-
-  if(count >= 30){
-    color = "red"
-  }
+  const {
+    count,
+    increment,
+    decrement,
+    reset
+  } = useCounter();
 
   return (
-    <div>
-      <h2 style={{ color }}>
-        Count: {count}
-      </h2>
+    <>
+      <h1>{count}</h1>
 
-      <button
-        onClick={onIncrement}
-        disabled={count >= maxLimit}
-      >
-        Increment
+      <button onClick={increment}>
+        +
       </button>
 
-      <button
-        onClick={onDecrement}
-        disabled={count === 0}
-      >
-        Decrement
+      <button onClick={decrement}>
+        -
       </button>
 
-      <button onClick={onReset}>
+      <button onClick={reset}>
         Reset
       </button>
-
-      {count === 0 && (
-        <p>Count is Zero</p>
-      )}
-
-      {count >= 25 && count < maxLimit && (
-        <p>High Count</p>
-      )}
-
-      {count === maxLimit && (
-        <p>Maximum Reached</p>
-      )}
-    </div>
+    </>
   );
 }
 
