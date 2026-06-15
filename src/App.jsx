@@ -1,31 +1,24 @@
 
 
-import { useRef } from "react";
+import UserContext
+from "./context/UserContext";
 
 function App() {
 
-  const timerRef = useRef(null);
-
-  const start = () => {
-    timerRef.current = setInterval(() => {
-      console.log("Running");
-    },1000);
-  };
-
-  const stop = () => {
-    clearInterval(timerRef.current);
+  const user = {
+    name: "Ramesh"
   };
 
   return (
-    <>
-      <button onClick={start}>
-        Start
-      </button>
 
-      <button onClick={stop}>
-        Stop
-      </button>
-    </>
+    <UserContext.Provider
+      value={user}
+    >
+
+      <Navbar />
+
+    </UserContext.Provider>
+
   );
 }
 
