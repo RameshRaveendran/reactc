@@ -1,24 +1,23 @@
+import Navbar
+from "./components/Navbar";
 
+import Home
+from "./components/Home";
 
-import UserContext
-from "./context/UserContext";
+import {
+  ThemeProvider,
+} from "./context/ThemeContext";
 
 function App() {
 
-  const user = {
-    name: "Ramesh"
-  };
-
   return (
-
-    <UserContext.Provider
-      value={user}
-    >
+    <ThemeProvider>
 
       <Navbar />
 
-    </UserContext.Provider>
+      <Home />
 
+    </ThemeProvider>
   );
 }
 
