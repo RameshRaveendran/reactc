@@ -3,15 +3,25 @@ function UserList({
 }) {
   return (
     <div>
-      <h2>User List</h2>
-
-      <ul>
-        {users.map(user => (
-          <li key={user.id}>
+      {users.map(user => (
+        <div
+          key={user.id}
+        >
+          <h3>
             {user.name}
-          </li>
-        ))}
-      </ul>
+          </h3>
+
+          <p>
+            {user.email}
+          </p>
+
+          <p>
+            {user.phone}
+          </p>
+
+          <hr />
+        </div>
+      ))}
     </div>
   );
 }
