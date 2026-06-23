@@ -11,8 +11,8 @@ function App() {
     loading,
     error,
   } = useFetch(
-    "https://jsonplaceholder.typicode.com/users"
-  );
+ "https://jsonplaceholder.typicode.com/todos"
+);
 
   if (loading) {
     return <h1>Loading...</h1>;
