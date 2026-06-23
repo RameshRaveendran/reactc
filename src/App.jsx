@@ -1,54 +1,18 @@
-import {
-  useState,
-  useEffect,
-} from "react";
-
 import UserList
 from "./components/UserList";
 
-import {
-  getUsers,
-} from "./api/userApi";
+import useFetch
+from "./hooks/useFetch";
 
 function App() {
 
-  const [users, setUsers] =
-    useState([]);
-
-  const [loading, setLoading] =
-    useState(true);
-
-  const [error, setError] =
-    useState("");
-
-  useEffect(() => {
-
-    async function fetchUsers() {
-
-      try {
-
-        const data =
-          await getUsers();
-
-        setUsers(data);
-
-      } catch (err) {
-
-        setError(
-          err.message
-        );
-
-      } finally {
-
-        setLoading(false);
-
-      }
-
-    }
-
-    fetchUsers();
-
-  }, []);
+  const {
+    data: users,
+    loading,
+    error,
+  } = useFetch(
+    "https://jsonplaceholder.typicode.com/users"
+  );
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -56,17 +20,14 @@ function App() {
 
   if (error) {
     return (
-      <h1>
-        Error:
-        {error}
-      </h1>
+      <h1>Error: {error}</h1>
     );
   }
 
   return (
     <div>
       <h1>
-        API Fetch Example
+        Custom Hook Example
       </h1>
 
       <UserList
