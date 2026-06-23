@@ -1,24 +1,10 @@
-function UserList({
-  users,
-}) {
+function UserList({ users }) {
   return (
     <div>
       {users.map(user => (
-        <div
-          key={user.id}
-        >
-          <h3>
-            {user.name}
-          </h3>
-
-          <p>
-            {user.email}
-          </p>
-
-          <p>
-            {user.phone}
-          </p>
-
+        <div key={user.id}>
+          <h3>{user.name}</h3>
+          <p>{user.email}</p>
           <hr />
         </div>
       ))}
